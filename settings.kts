@@ -9,7 +9,7 @@ object BuildDockerImageGrails : BuildType({
     params {
         text("env.BUILD_START_TIME", "", display = ParameterDisplay.HIDDEN, allowEmpty = true)
         param("appname", "urm-editor")
-        param("giturl", "ssh://git@bitbucket.webbfontaine.com:7999/wvl/urm-editor.git")
+        param("giturl", "")
         param("applicationcontext", "urm-editor")
         param("appsourcecodebranch", "devel")
         param("javaversion", "8.0.191-oracle")``
