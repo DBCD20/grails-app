@@ -31,7 +31,8 @@ object BuildDockerImageGrails : BuildType({
                 else
                 grails_version=${'$'}(grep app.grails.version application.properties | sed 's/app.grails.version=//')
                 fi
-                
+            grails_version=`grep grailsVersion gradle.properties | awk -F= '{print $2}'`
+            version=`grep -i 'version ' build.gradle | awk -F"\"|\'" '{print $2}'`                
                 set-grails.sh ${'$'}grails_version
                 
                 if [ -f gradle.properties ]; then
